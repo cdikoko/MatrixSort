@@ -29,6 +29,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class MatrixSort {
 	
+	// why is your list just 1 row like this [1,3,4,5,6,7,8,8,2,2345,23452345,23467,4537,435,75]
 	public static ArrayList<Integer> matrix = new ArrayList<>();
 	
 	private static String file = "src/main/resources/Clement Task.xlsx";
@@ -46,7 +47,7 @@ public class MatrixSort {
 		
 		System.out.print(matrix);
 	}
-	
+	// Why is it static and workbook is never closed
 	public static void readExcelFile() throws FileNotFoundException, IOException{
 		XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(file));
 		XSSFSheet sheet = workbook.getSheetAt(0);
@@ -64,7 +65,7 @@ public class MatrixSort {
 						matrix.add((int) cell.getNumericCellValue());
 						//System.out.print(matrix);
 						break;
-			
+			// what if the use is an idiot and its not numeric
 				
 				
 				
