@@ -30,12 +30,19 @@ public class MatrixSort {
 	public static String row;
 	public static String col;
 	
+<<<<<<< HEAD
 	public MatrixSort( int value){
 		String path = "src/main/resources/Clement Task.xlsx";
 		new MatrixSort(path);
 		convert(find(list, value));
 		
 	}
+=======
+	// why is your list just 1 row like this [1,3,4,5,6,7,8,8,2,2345,23452345,23467,4537,435,75]
+	public static ArrayList<Integer> matrix = new ArrayList<>();
+	
+	private static String file = "src/main/resources/Clement Task.xlsx";
+>>>>>>> 5ca27445931588089542412f641c30e54f39b58b
 	
 	public static void main(String [] args ){
 		new MatrixSort(55);
@@ -63,6 +70,7 @@ public class MatrixSort {
 		return getLocation();
 		
 	}
+<<<<<<< HEAD
 	
 	
 	public static String convert(String rowColIndex){
@@ -75,6 +83,27 @@ public class MatrixSort {
 		
 			if(rowColIndex.length() >= 2){ 
 				row = rowColIndex.substring(0, 1);
+=======
+	// Why is it static and workbook is never closed
+	public static void readExcelFile() throws FileNotFoundException, IOException{
+		XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(file));
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		Iterator<Row> RowIterator = sheet.iterator();
+		
+		while(RowIterator.hasNext()){
+			Row nextRow = RowIterator.next();
+			Iterator<Cell> cellIterator = nextRow.cellIterator();
+			
+			while(cellIterator.hasNext()){
+				Cell cell = cellIterator.next();
+				
+				switch(cell.getCellType()){
+				case Cell.CELL_TYPE_NUMERIC:
+						matrix.add((int) cell.getNumericCellValue());
+						//System.out.print(matrix);
+						break;
+			// what if the use is an idiot and its not numeric
+>>>>>>> 5ca27445931588089542412f641c30e54f39b58b
 				
 				col = rowColIndex.substring(1);
 				convert = CellReference.convertNumToColString(Integer.valueOf(col));
