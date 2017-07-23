@@ -9,21 +9,19 @@ public class MatrixSortTest {
 	
 	@Test
 	public void findValues(){
-	MatrixSort	a = new MatrixSort(55);
-	assertEquals("G4", a.getLocation());
+	MatrixSort	a = new MatrixSort(5005);
+	assertEquals("J10", a.getLocation());
 	
-	MatrixSort b = new MatrixSort(35);
-	assertEquals("F5", b.getLocation());
+	MatrixSort b = new MatrixSort(1012);
+	assertEquals("J3", b.getLocation());
 	
-	MatrixSort c = new MatrixSort(11);
-	assertEquals("B3", b.getLocation());
+	MatrixSort c = new MatrixSort(6);
+	assertEquals("D1", b.getLocation());
 	
-	MatrixSort d = new MatrixSort(2222);
-	assertEquals("J2", b.getLocation());
+	MatrixSort d = new MatrixSort(3);
+	assertEquals("A2", b.getLocation());
 	
 	
-	MatrixSort e = new MatrixSort(200000);
-	assertEquals("I9", b.getLocation());
 	
 		
 	}
